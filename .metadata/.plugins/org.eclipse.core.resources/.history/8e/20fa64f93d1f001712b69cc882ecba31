@@ -24,8 +24,7 @@
         android:layout_below="@+id/lbl1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:ems="10" 
-        android:hint="Ingrese nombres">
+        android:ems="10" >
 
         <requestFocus />
     </EditText>
@@ -37,8 +36,7 @@
         android:layout_below="@+id/txtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
-        android:ems="10" 
-        android:hint="Ingrese apellidos"/>
+        android:ems="10" />
 
     <Button
         android:id="@+id/btnProcesar"

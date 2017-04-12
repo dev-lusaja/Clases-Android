@@ -7,8 +7,5 @@
     <string name="lbl1">Datos a Mostrar</string>
     <string name="lbl2">Seleccione el tipo de sexo</string>
     <string name="rb1">Masculino</string>
-    <string name="rb2">Femenino</string>
-    <string name="rb3">Otros</string>
-    <string name="btnProcesar">Procesar</string>
 
 </resources>
