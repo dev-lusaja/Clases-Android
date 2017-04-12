@@ -1,0 +1,40 @@
+package com.example.android_clase_2;
+
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+public class Clase2 extends Activity {
+	
+	/* DECLARACION DE VARIABLES */
+	EditText a, b;
+	Spinner combo;
+	Button btn1;
+	
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        /* MAPEO DE VARIABLES */
+        a = (EditText)findViewById(R.id.txt1);
+        b = (EditText)findViewById(R.id.txt2);
+        combo = (Spinner)findViewById(R.id.spnCombo);
+        btn1 = (Button)findViewById(R.id.btnCalcular);
+        
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.clase2, menu);
+        return true;
+    }
+    
+}

@@ -1,0 +1,132 @@
+package com.example.android.intro;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+/* IMPLEMENTAR BOTON ONCLICK LISTENER */
+public class Movil1 extends Activity implements OnClickListener{
+
+	/* DECLARACION DE VARIABLES */
+	EditText a,b,c;
+	Button btn1,btn2,btn3;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        /* MAPEO DE VARIABLES */
+        a=(EditText)findViewById(R.id.txt1);
+        b=(EditText)findViewById(R.id.txt2);
+        c=(EditText)findViewById(R.id.txt3);
+        
+        btn1=(Button)findViewById(R.id.btnMax);
+        btn2=(Button)findViewById(R.id.btnMin);
+        btn3=(Button)findViewById(R.id.btnIgual);
+        
+        /* ENLAZAR BOTONES CON EL LISTENER */
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        
+        btn1.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Mayor();
+			}
+        });
+        
+        btn2.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Menor();
+			}
+        });
+        
+        btn3.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Igual();
+			}
+        });
+    }
+    
+    /* PROGRAMACION EN JAVA, CREACION DE METODOS*/
+    
+    public int Mayor() {
+    	int x,y,z,res = 0;
+    	x=Integer.parseInt(a.getText().toString());
+    	y=Integer.parseInt(b.getText().toString());
+    	z=Integer.parseInt(c.getText().toString());
+    	if(x > y && x > z){
+    		res=x;
+    	}
+    	if(y > x && y > z){
+    		res=y;
+    	}
+    	if(z > x && z > y){
+    		res=z;
+    	}
+    	Toast.makeText(getApplicationContext(), "El número mayo es: " + res, Toast.LENGTH_LONG).show();
+    	return res;
+    }
+
+    public int Menor() {
+    	int x,y,z,res = 0;
+    	x=Integer.parseInt(a.getText().toString());
+    	y=Integer.parseInt(b.getText().toString());
+    	z=Integer.parseInt(c.getText().toString());
+    	if(x < y && x < z){
+    		res=x;
+    	}
+    	if(y < x && y < z){
+    		res=y;
+    	}
+    	if(z < x && z < y){
+    		res=z;
+    	}
+    	Toast.makeText(getApplicationContext(), "El número menor es: " + res, Toast.LENGTH_LONG).show();
+    	return res;
+    }
+    
+    public int Igual() {
+    	int x,y,z,res = 0;
+    	x=Integer.parseInt(a.getText().toString());
+    	y=Integer.parseInt(b.getText().toString());
+    	z=Integer.parseInt(c.getText().toString());
+    	if(x == y && x == z){
+    		res=x;
+    	}
+    	if(y == x && y == z){
+    		res=y;
+    	}
+    	if(z == x && z == y){
+    		res=z;
+    	}
+    	Toast.makeText(getApplicationContext(), "Los números son iguales, el número ingresado es: " + res, Toast.LENGTH_LONG).show();
+    	return res;
+    }
+    	
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.movil1, menu);
+        return true;
+    }
+
+
+ 
+    
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}

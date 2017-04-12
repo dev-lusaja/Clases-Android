@@ -1,0 +1,40 @@
+package com.example.android.ejercicio_1;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+public class Ejercicio_1 extends Activity {
+	
+	/* DECLARACION DE VARIABLES */
+	EditText txt1,txt2;
+	Spinner spn1;
+	CheckBox chk1,chk2;
+	Button btn1;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        /* MAPEO DE VARIABLES */
+        txt1 = (EditText)findViewById(R.id.txt1);
+        txt2 = (EditText)findViewById(R.id.txt2);
+        chk1 = (CheckBox)findViewById(R.id.chk1);
+        chk2 = (CheckBox)findViewById(R.id.chk2);
+        btn1 = (Button)findViewById(R.id.btn1);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.ejercicio_1, menu);
+        return true;
+    }
+    
+}

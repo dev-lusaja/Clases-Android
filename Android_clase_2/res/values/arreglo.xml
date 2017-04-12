@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ARREGLO">
+        <item >SELECCIONE</item>
+        <item >CONTADO</item>
+        <item >FINANCIADO</item>
+    </string-array>
+</resources>

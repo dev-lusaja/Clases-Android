@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android.Ejercicio_1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lbl1">Producto:</string>
+    <string name="lbl2">Cantidad</string>
+    <string name="lbl3">Modalidad de Pago</string>
+    <string name="lbl3b">Precio</string>
+    <string name="lbl4">Modalidad de Pago</string>
+    <string name="chk1">Contado</string>
+    <string name="chk2">Credito</string>
+
+</resources>

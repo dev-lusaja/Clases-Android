@@ -1,0 +1,38 @@
+package com.example.android.clase3;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.CheckBox;
+import android.widget.EditText;
+
+public class Clase3 extends Activity {
+	
+	/* DECLARACION DE VARIABLES */
+	EditText txt1,txt2,txt3;
+	CheckBox chk1,chk2,chk3;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        /* MAPEO DE VARIABLES */
+        txt1 = (EditText)findViewById(R.id.txt1);
+        txt2 = (EditText)findViewById(R.id.txt2);
+        txt3 = (EditText)findViewById(R.id.txt3);
+        chk1 = (CheckBox)findViewById(R.id.chk1);
+        chk2 = (CheckBox)findViewById(R.id.chk2);
+        chk3 = (CheckBox)findViewById(R.id.chk3);
+        
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.clase3, menu);
+        return true;
+    }
+    
+}
