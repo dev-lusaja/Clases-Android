@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="medidas">
+	    <item >Kilos</item>
+	    <item >Saco</item>
+	    <item >Galog</item>
+	    <item >Latas</item>
+	</string-array>    
+</resources>

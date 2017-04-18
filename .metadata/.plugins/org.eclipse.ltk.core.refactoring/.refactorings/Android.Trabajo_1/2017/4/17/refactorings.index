@@ -1,0 +1,26 @@
+1492480132641	Rename field 'textView1'
+1492483191738	Extracts string 'null' into R.string.lblProducto
+1492483202845	Rename field 'textView2'
+1492483211867	Extracts string 'null' into R.string.lblCantidad
+1492483221114	Rename field 'textView3'
+1492483235720	Extracts string 'null' into R.string.lblPrecio
+1492483260299	Rename field 'textView4'
+1492483270082	Extracts string 'null' into R.string.lblMedida
+1492483279423	Rename field 'textView5'
+1492483298843	Extracts string 'null' into R.string.lblPago
+1492483326222	Rename field 'textView6'
+1492483334874	Extracts string 'null' into R.string.lblCuotas
+1492483370051	Rename field 'button1'
+1492483380161	Extracts string 'null' into R.string.btnCalcular
+1492483387785	Rename field 'button2'
+1492483395900	Extracts string 'null' into R.string.btnSalir
+1492483406644	Rename field 'editText1'
+1492483421612	Rename field 'editText2'
+1492483454261	Rename field 'editText3'
+1492483468196	Rename field 'spinner1'
+1492483479548	Rename field 'radio0'
+1492483493149	Rename field 'radio1'
+1492483501289	Rename field 'spinner2'
+1492483618702	Extracts string 'null' into R.string.rbContado
+1492483645435	Extracts string 'null' into R.string.rbCredito
+1492487596726	Extracts string 'null' into R.string.lblDias

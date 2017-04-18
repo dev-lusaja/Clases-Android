@@ -1,0 +1,138 @@
+package com.example.android.trabajo_1;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+public class MainActivity extends Activity implements OnClickListener{
+
+	/* DECLARACION DEVARIABLES */
+	EditText txtProducto, txtPrecio, txtCantidad;
+	Spinner spnMedida, spnCuotas;
+	RadioButton rbContado, rbCredito;
+	Button btnCalcular, btnSalir;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        /* INSTANCIACION DE VARIABLES */
+        txtProducto = (EditText)findViewById(R.id.txtProducto);
+        txtCantidad = (EditText)findViewById(R.id.txtCantidad);
+        txtPrecio = (EditText)findViewById(R.id.txtPrecio);
+        spnMedida = (Spinner)findViewById(R.id.spnMedida);
+        spnCuotas = (Spinner)findViewById(R.id.spnCuotas);
+        btnCalcular = (Button)findViewById(R.id.btnCalcular);
+        btnSalir = (Button)findViewById(R.id.btnSalir);
+        rbContado = (RadioButton)findViewById(R.id.rbContado);
+        rbCredito = (RadioButton)findViewById(R.id.rbCredito);
+        
+        ArrayAdapter medidas = ArrayAdapter.createFromResource(this, R.array.medidas, android.R.layout.simple_spinner_dropdown_item);
+        spnMedida.setAdapter(medidas);
+        
+        ArrayAdapter cuotas = ArrayAdapter.createFromResource(this, R.array.cuotas, android.R.layout.simple_spinner_dropdown_item);
+        spnCuotas.setAdapter(cuotas);
+        
+        /* CREACION DE EVENT LISTENERS */
+        btnCalcular.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Calcular();	
+			}
+		});
+        
+        btnSalir.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Salir();
+			}
+		});
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/* METODOS PROPIOS */
+    public void Calcular(){
+    	/* INSTANCIACION DE VARIABLES */
+    	
+    	try {
+	    	String producto = txtProducto.getText().toString();
+	    	String medida = spnMedida.getSelectedItem().toString();
+	    	String pago = "";
+	    	if (rbContado.isChecked()){
+	    		pago = "contado";
+	    	}
+	    	if (rbCredito.isChecked()){
+	    		pago = "credito";
+	    	}
+	    	int cantidad = Integer.parseInt(txtCantidad.getText().toString());
+	    	double precio = Double.parseDouble(txtPrecio.getText().toString());
+	    	int dias = Integer.parseInt(spnCuotas.getSelectedItem().toString());
+	    	double subtotal = cantidad * precio;
+	    	double descuento = 0, total = 0;
+	    	/* PROCESO PARA DESCUENTOS */
+	    	if (medida.equals("Kilos")){
+	    		if (pago.equals("contado")){
+	    			descuento = 0.30;
+	    		} else if(pago.equals("credito")){
+	    			if (dias <= 10){
+	    				descuento = 0.10;
+	    			} else {
+	    				descuento = 0.05;
+	    			}
+	    		}
+	    	} else if (medida.equals("Saco") || producto.equals("Galon")){
+	    		if (cantidad > 100){
+	    			descuento = 0.40;
+	    		}
+	    		if (pago.equals("contado")){
+	    			descuento = descuento + 0.05;
+	    		} else if (pago.equals("credito")){
+	    			if (dias < 7){
+	    				descuento = 0.15;
+	    			}
+	    		}
+	    	} else if (medida.equals("Latas")){
+	    		if (cantidad > 500){
+	    			descuento = 0.50;
+	    		}
+	    	}
+	    	
+	    	total = subtotal - (subtotal * descuento);
+	    	Toast.makeText(getApplicationContext(), "El producto es: " + producto + "\n" +
+	    											"El subtotal es: " + subtotal + "\n" +
+	    											"El descuento es: " + descuento * 100 + "% \n" +
+	    											"El total a pagar es: " + total, Toast.LENGTH_LONG).show();
+		} catch (Exception e) {
+			Toast.makeText(getApplicationContext(), "Completa todo los campos", Toast.LENGTH_LONG).show();
+		}
+    }
+    
+    public void Salir(){
+    	finish();
+    }
+}

@@ -1,0 +1,44 @@
+package com.example.android.trabajo_1;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Spinner;
+
+public class MainActivity extends Activity {
+
+	/* DECLARACION DEVARIABLES */
+	EditText txtProducto, txtPrecio, txtCantidad;
+	Spinner spnMedida, spnCuotas;
+	RadioButton rbContado, rbCredito;
+	Button btnCalcular, btnSalir;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        /* INSTANCIACION DE VARIABLES */
+        txtProducto = (EditText)findViewById(R.id.txtProducto);
+        txtCantidad = (EditText)findViewById(R.id.txtCantidad);
+        txtPrecio = (EditText)findViewById(R.id.txtPrecio);
+        spnMedida = (Spinner)findViewById(R.id.spnMedida);
+        spnCuotas = (Spinner)findViewById(R.id.spnCuotas);
+        btnCalcular = (Button)findViewById(R.id.btnCalcular);
+        btnSalir = (Button)findViewById(R.id.btnSalir);
+        
+        
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}
